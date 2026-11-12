@@ -8,3 +8,7 @@ Cài đặt trực tiếp từ thư mục mã nguồn:
 ```bash
 pip install .
 ```
+
+## Cách sử dụng
+
+Xem trong file `tests/test_client.py` để biết cách sử dụng thư viện.
