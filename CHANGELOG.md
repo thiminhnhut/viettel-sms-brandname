@@ -11,7 +11,7 @@
 - Ngoại lệ mới: `SendError`, `SMSConnectionError`, `InvalidResponseError`, `TemplateError`.
 - Ghi log qua logger `viettel_sms` (không bao giờ ghi mật khẩu).
 - Kèm `py.typed` để hỗ trợ type checker.
-- Thêm unit test, GitHub Actions CI và tự publish lên PyPI khi push tag.
+- Thêm unit test.
 
 ### Thay đổi
 - **Client chỉ đăng nhập khi gửi tin lần đầu**, không còn đăng nhập ngay khi khởi tạo. Muốn kiểm tra tài khoản sớm, hãy gọi `client.login()`.

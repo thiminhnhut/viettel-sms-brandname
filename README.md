@@ -8,7 +8,6 @@ Thư viện tự đăng nhập, tự làm mới token, soạn tin bằng templat
 
 [![PyPI version](https://img.shields.io/pypi/v/viettel-sms-brandname?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/viettel-sms-brandname/)
 [![Python](https://img.shields.io/pypi/pyversions/viettel-sms-brandname?logo=python&logoColor=white)](https://pypi.org/project/viettel-sms-brandname/)
-[![CI](https://github.com/thiminhnhut/viettel-sms-brandname/actions/workflows/ci.yml/badge.svg)](https://github.com/thiminhnhut/viettel-sms-brandname/actions/workflows/ci.yml)
 [![Downloads](https://static.pepy.tech/badge/viettel-sms-brandname/month)](https://pepy.tech/project/viettel-sms-brandname)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
