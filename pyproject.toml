@@ -4,22 +4,61 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "viettel-sms-brandname"
-version = "1.0.0"
-description = "Thư viện Python tích hợp chính thức Viettel SMS Brandname v2 API với cơ chế tự động quản lý Token và Template."
+dynamic = ["version"]
+description = "Thư viện Python (không chính thức) gửi SMS Brandname qua Viettel API v2: tự quản lý token, template tin nhắn, chuẩn hoá số điện thoại."
 readme = "README.md"
 authors = [
     { name = "thiminhnhut", email = "thiminhnhut@gmail.com" }
 ]
 license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = ["viettel", "sms", "brandname", "otp", "vietnam", "sms-gateway", "cskh"]
 classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Natural Language :: Vietnamese",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Topic :: Communications :: Telephony",
+    "Typing :: Typed",
 ]
-requires-python = ">=3.7"
 dependencies = [
     "requests>=2.25.0"
 ]
 
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.5", "build", "python-dotenv"]
+
 [project.urls]
 Homepage = "https://github.com/thiminhnhut/viettel-sms-brandname"
+Repository = "https://github.com/thiminhnhut/viettel-sms-brandname"
+Issues = "https://github.com/thiminhnhut/viettel-sms-brandname/issues"
+Changelog = "https://github.com/thiminhnhut/viettel-sms-brandname/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+packages = ["viettel_sms"]
+
+[tool.setuptools.package-data]
+viettel_sms = ["py.typed"]
+
+[tool.setuptools.dynamic]
+version = { attr = "viettel_sms.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["UP006", "UP007", "UP035"]

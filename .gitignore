@@ -9,7 +9,18 @@ build/
 dist/
 *.egg-info/
 
+# Test / lint cache
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
 # Environment variables
 .env
 venv/
+.venv/
 ENV/
+
+# IDE
+.vscode/
+.idea/
