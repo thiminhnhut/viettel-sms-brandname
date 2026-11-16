@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📨 Viettel SMS Brandname
+# Viettel SMS Brandname
 
 **Gửi SMS Brandname qua Viettel API v2 bằng Python, chỉ vài dòng code.**
 
@@ -16,20 +16,20 @@ Thư viện tự đăng nhập, tự làm mới token, soạn tin bằng templat
 
 ---
 
-## ✨ Tính năng
+## Tính năng
 
 | Tính năng | Mô tả |
 | --- | --- |
-| 🔐 **Tự động xác thực** | Tự đăng nhập ở lần gửi đầu tiên, không cần gọi API login. |
-| ♻️ **Tự làm mới token** | Khi token hết hạn (`GECO_001`), thư viện dùng refresh token để lấy token mới rồi gửi lại. Nếu refresh token cũng hết hạn, thư viện đăng nhập lại. Không gửi trùng tin. |
-| 🧵 **An toàn với nhiều thread** | Dùng chung một client trong web server hay worker mà không bị làm mới token nhiều lần. |
-| 🧩 **Template tin nhắn** | Đăng ký mẫu một lần rồi chỉ cần truyền `{otp}`, `{name}`... Nếu thiếu tham số, thư viện báo rõ là thiếu tham số nào. |
-| 📱 **Chuẩn hoá số điện thoại** | `0912 345 678`, `+84912345678` và `84912345678` đều được đổi về cùng một dạng. Số trùng bị bỏ để không tốn tiền gửi hai lần. |
-| 🌐 **Nhiều môi trường** | `public`, `ip`, `internal` hoặc `base_url` tuỳ chỉnh. Có tuỳ chọn chứng chỉ SSL (`verify`). |
-| 🚨 **Ngoại lệ rõ ràng** | Mỗi loại lỗi có một ngoại lệ riêng, kèm `code` và `message`. |
-| 🪶 **Nhẹ, có type hints** | Chỉ phụ thuộc vào `requests`. Có kèm `py.typed`. |
+| **Tự động xác thực** | Tự đăng nhập ở lần gửi đầu tiên, không cần gọi API login. |
+| **Tự làm mới token** | Khi token hết hạn (`GECO_001`), thư viện dùng refresh token để lấy token mới rồi gửi lại. Nếu refresh token cũng hết hạn, thư viện đăng nhập lại. Không gửi trùng tin. |
+| **An toàn với nhiều thread** | Dùng chung một client trong web server hay worker mà không bị làm mới token nhiều lần. |
+| **Template tin nhắn** | Đăng ký mẫu một lần rồi chỉ cần truyền `{otp}`, `{name}`... Nếu thiếu tham số, thư viện báo rõ là thiếu tham số nào. |
+| **Chuẩn hoá số điện thoại** | `0912 345 678`, `+84912345678` và `84912345678` đều được đổi về cùng một dạng. Số trùng bị bỏ để không tốn tiền gửi hai lần. |
+| **Nhiều môi trường** | `public`, `ip`, `internal` hoặc `base_url` tuỳ chỉnh. Có tuỳ chọn chứng chỉ SSL (`verify`). |
+| **Ngoại lệ rõ ràng** | Mỗi loại lỗi có một ngoại lệ riêng, kèm `code` và `message`. |
+| **Nhẹ, có type hints** | Chỉ phụ thuộc vào `requests`. Có kèm `py.typed`. |
 
-## 📦 Cài đặt
+## Cài đặt
 
 ```bash
 pip install viettel-sms-brandname
@@ -37,7 +37,7 @@ pip install viettel-sms-brandname
 
 Yêu cầu Python 3.9 trở lên.
 
-## 🚀 Bắt đầu nhanh
+## Bắt đầu nhanh
 
 ```python
 from viettel_sms import ViettelSMSClient
@@ -50,7 +50,7 @@ with ViettelSMSClient(username="your_username", password="your_password") as cli
     )
 ```
 
-## 📖 Hướng dẫn sử dụng
+## Hướng dẫn sử dụng
 
 ### 1. Cấu hình bằng biến môi trường (khuyến nghị)
 
@@ -128,7 +128,7 @@ logging.getLogger("viettel_sms").setLevel(logging.DEBUG)
 
 Thư viện ghi log khi đăng nhập, làm mới token và gửi tin. Mật khẩu không bao giờ được ghi ra.
 
-## 🌐 Môi trường
+## Môi trường
 
 | `env` | Endpoint | Khi nào dùng |
 | --- | --- | --- |
@@ -136,9 +136,9 @@ Thư viện ghi log khi đăng nhập, làm mới token và gửi tin. Mật kh�
 | `ip` | `https://171.234.245.145:8000` | Kết nối trực tiếp bằng IP public |
 | `internal` | `https://10.208.67.177:8000` | Kết nối từ mạng nội bộ |
 
-> ⚠️ Khi kết nối bằng IP (`ip`, `internal`), chứng chỉ SSL có thể không khớp. Nên truyền file CA bằng `verify="/path/to/ca.pem"`. Chỉ dùng `verify=False` khi bạn hiểu rủi ro.
+> Khi kết nối bằng IP (`ip`, `internal`), chứng chỉ SSL có thể không khớp. Nên truyền file CA bằng `verify="/path/to/ca.pem"`. Chỉ dùng `verify=False` khi bạn hiểu rủi ro.
 
-## 📚 API Reference
+## API Reference
 
 ### `ViettelSMSClient(username, password, env="public", timeout=10, verify=True, base_url=None, session=None, templates=None)`
 
@@ -164,7 +164,7 @@ Thư viện ghi log khi đăng nhập, làm mới token và gửi tin. Mật kh�
 
 Hàm tiện ích: `normalize_msisdn("0912 345 678")` trả về `["84912345678"]`.
 
-## 🚨 Xử lý lỗi
+## Xử lý lỗi
 
 Mọi lỗi từ thư viện đều kế thừa `SMSBrandnameError` và có hai thuộc tính `code` và `message`.
 
@@ -204,7 +204,7 @@ Mã phản hồi của Viettel: `GECO_002` là thành công, `GECO_001` là toke
 
 > Tên `ValidationError` của bản 1.0 vẫn dùng được; nó là tên khác của `SendError`.
 
-## 🛠️ Phát triển
+## Phát triển
 
 ```bash
 git clone https://github.com/thiminhnhut/viettel-sms-brandname
@@ -217,16 +217,16 @@ ruff check . && ruff format .
 
 Muốn gửi thử tin thật, chạy [examples/send_otp.py](examples/send_otp.py). Lưu ý là lệnh này bị tính phí.
 
-## 🤝 Đóng góp
+## Đóng góp
 
 Mọi đóng góp đều được chào đón: báo lỗi, đề xuất tính năng hoặc gửi pull request. Xem lịch sử thay đổi tại [CHANGELOG.md](CHANGELOG.md).
 
-## 📄 License
+## License
 
 Phát hành theo giấy phép [MIT](LICENSE). Đây là thư viện không chính thức, không do Viettel phát triển hay bảo trợ.
 
 <div align="center">
 
-Nếu thư viện có ích cho bạn, hãy tặng repo một ⭐ trên [GitHub](https://github.com/thiminhnhut/viettel-sms-brandname)!
+Nếu thư viện có ích cho bạn, hãy tặng repo một star trên [GitHub](https://github.com/thiminhnhut/viettel-sms-brandname)!
 
 </div>
